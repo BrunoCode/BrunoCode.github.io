@@ -4,9 +4,15 @@ I plan on writing decending sorted notes about my current endeavors. These notes
 My current medium sized goal is to get good at leetcode/hackerank style interview questions. This is likely the first step in any job interview. 
 Thanks for reading.
 
+
+# 2021-03-31 (March 31, 2021)
+
+We saw the solution to the two sum problem on a sorted array yesterday. Let's see how we get to how we got there. On the original two sum problem, that makes no guarantees
+about sorting.
+
 # 2021-03-30 (March 30, 2021)
 
-This is a continuation of my last post. Before I talk about how to get to the inuition behind the solution of the two sum problem on a sorted array. I would like to reveal my code solution in and effort to let you get your brain jogging about it.
+This is a continuation of my last post. Before I talk about how to get to the inuition behind the solution of the two sum problem on a sorted array. I would like to reveal my code solution in and effort to my the explaination of the intuition behind the solution easier.
     
     var twoSum = function(numbers, target) {
       let minIdx = 0;
