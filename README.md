@@ -8,11 +8,27 @@ Thanks for reading.
 # 2021-03-31 (March 31, 2021)
 
 We saw the solution to the two sum problem on a sorted array yesterday. Let's see how we get to how we got there. On the original two sum problem, that makes no guarantees
-about sorting.
+about sorting, the optimal solution is to use a hashmap to store complements that we are looking for in the rest of the array. 
+
+This optimal solution has O(n) complexity. And it has a O(n) space complexity. So how could we get a better solution if our input is a sorted array? Can we get better than O(n) complexity? Most likely not because you may likely have to check every element in the array. What we might be able to do is reduce the space complexity. The only way we could reduce space complexity is if we could remove the use of the hashmap. The hashmap was storing complements to look for in the rest of the array to sum up to the target.
+
+So in what way can we use the fact that the array is sorted to avoid storing complaments. Let's narrow the question: What new information can we now easily obtain from a sorted array. Even better said what information can I now obtain in O(1) time? On a sorted array:
+
+* I can get the min value.
+* I can also get the max value.
+* I can get the median.
+* I can know exactly where in the array the above 3 values exist.
+* I can calculate the diff between the min and max.
+
+Okay let's analyze this information. 
+
+* Because I know the min and max and the diff between them I know that there are no two other numbers in the array with a greater diff than the min and max.
+* I know that if I wanted to get the smallest sum I could sum the value at index 0, and index 1.
+* I know that if I wanted to get the largest sum I could sum the last value with the second to last value.
 
 # 2021-03-30 (March 30, 2021)
 
-This is a continuation of my last post. Before I talk about how to get to the inuition behind the solution of the two sum problem on a sorted array. I would like to reveal my code solution in and effort to my the explaination of the intuition behind the solution easier.
+This is a continuation of my last post. Before I talk about how to get to the inuition behind the solution of the two sum problem on a sorted array. I would like to reveal my code solution in and effort to simplify my the explaination of the intuition behind the solution easier.
     
     var twoSum = function(numbers, target) {
       let minIdx = 0;
